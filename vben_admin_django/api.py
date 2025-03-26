@@ -26,4 +26,4 @@ api = NinjaAPI()
 
 api.add_router("/auth/", auth.api)
 api.add_router("/user/", user.api, auth=Auth([]))
-api.add_router("/test/", test.api, auth=Auth([]))
+api.add_router("/test/", test.api)

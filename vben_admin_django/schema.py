@@ -5,3 +5,7 @@ class UserSchema(Schema):
     username: str
     password: str
     captcha: bool
+
+
+class DataSchema(Schema):
+    name: str

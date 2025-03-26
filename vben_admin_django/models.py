@@ -128,3 +128,10 @@ class Setting(models.Model):
     class Meta:
         managed = False
         db_table = 'setting'
+
+
+class Data(models.Model):
+    name = models.CharField(max_length=200, blank=True, null=True)
+    class Meta:
+        managed = False
+        db_table = 'data'
