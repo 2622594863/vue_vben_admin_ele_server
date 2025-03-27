@@ -1,5 +1,5 @@
 from ninja import NinjaAPI
-from .router import auth, user, test
+from .router import auth, user, test,admin_user
 from typing import Any, List
 from ninja_jwt.authentication import JWTBaseAuthentication
 from ninja_extra.security import HttpBearer
@@ -27,3 +27,4 @@ api = NinjaAPI()
 api.add_router("/auth/", auth.api)
 api.add_router("/user/", user.api, auth=Auth([]))
 api.add_router("/test/", test.api)
+api.add_router("/admin_user/", admin_user.api)

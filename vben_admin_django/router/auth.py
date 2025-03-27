@@ -2,7 +2,7 @@ from g4f.Provider.deprecated.Myshell import models
 from ninja import Router
 from django.core.handlers.wsgi import WSGIRequest
 from ..tools import Result as result
-from .. import schema
+from ..schema import RequestSchema
 from ninja_jwt.tokens import AccessToken
 from django.contrib.auth import authenticate, login, logout
 from .. import models
@@ -12,7 +12,7 @@ api = Router()
 
 
 @api.post('/login')
-def fun_login(request: WSGIRequest, data: schema.UserSchema):
+def fun_login(request: WSGIRequest, data: RequestSchema.LoginUserSchema):
     user = authenticate(username=data.username, password=data.password)
     if user is None:
         return result.error(message="用户名或密码错误")

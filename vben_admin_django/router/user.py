@@ -2,6 +2,7 @@ from ninja import Router
 from django.core.handlers.wsgi import WSGIRequest
 from ..tools import Result as result
 
+
 api = Router()
 
 
@@ -18,4 +19,3 @@ def fun(request: WSGIRequest):
         "money": 234.43
     }
     return result.success(data=data)
-
